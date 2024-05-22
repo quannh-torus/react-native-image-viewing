@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
     width: "100%",
     zIndex: 1,
     top: 0,
+    left: 16
   },
   footer: {
     position: "absolute",
