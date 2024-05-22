@@ -14,8 +14,8 @@ import {
   View,
   VirtualizedList,
   ModalProps,
-  Modal,
-} from "react-native";
+  Modal, StatusBar,
+} from 'react-native'
 
 import ImageItem from "./components/ImageItem/ImageItem";
 import ImageDefaultHeader from "./components/ImageDefaultHeader";
@@ -45,7 +45,7 @@ type Props = {
 };
 
 const DEFAULT_ANIMATION_TYPE = "fade";
-const DEFAULT_BG_COLOR = "#000";
+const DEFAULT_BG_COLOR = "rgba(0,0,0,0.3)";
 const DEFAULT_DELAY_LONG_PRESS = 800;
 const SCREEN = Dimensions.get("screen");
 const SCREEN_WIDTH = SCREEN.width;
@@ -102,7 +102,7 @@ function ImageViewing({
       supportedOrientations={["portrait"]}
       hardwareAccelerated
     >
-      <StatusBarManager presentationStyle={presentationStyle} />
+      <StatusBar translucent={true} backgroundColor={backgroundColor} />
       <View style={[styles.container, { opacity, backgroundColor }]}>
         <Animated.View style={[styles.header, { transform: headerTransform }]}>
           {typeof HeaderComponent !== "undefined" ? (
@@ -176,7 +176,6 @@ const styles = StyleSheet.create({
     width: "100%",
     zIndex: 1,
     top: 0,
-    left: 16
   },
   footer: {
     position: "absolute",

@@ -17,16 +17,19 @@ Try with Expo: https://expo.io/@antonkalinin/react-native-image-viewing
   <img src="https://github.com/jobtoday/react-native-image-viewing/blob/master/demo.gif?raw=true" height="480" />
 </p>
 
+## Fork from react-native-image-viewing
+- [Github](https://github.com/LimitedDani/react-native-image-viewing)
+
 ## Installation
 
 ```bash
-yarn add react-native-image-viewing
+yarn add rn-torus-image-viewing
 ```
 
 or
 
 ```bash
-npm install --save react-native-image-viewing
+npm install --save rn-torus-image-viewing
 ```
 
 ## Usage
