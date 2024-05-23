@@ -104,7 +104,7 @@ function ImageViewing({
       supportedOrientations={["portrait"]}
       hardwareAccelerated
     >
-      <StatusBar translucent={true} backgroundColor={backgroundColor} />
+      <StatusBar backgroundColor={backgroundColor} />
       <TouchableWithoutFeedback onPress={dismissPopUpPressOutSideImage ? onRequestCloseEnhanced : undefined}>
         <View style={[styles.container, { opacity, backgroundColor }]}>
           <Animated.View style={[styles.header, { transform: headerTransform }]}>
