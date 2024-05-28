@@ -15,6 +15,8 @@ import {
   VirtualizedList,
   ModalProps,
   Modal, StatusBar, TouchableWithoutFeedback,
+  StyleProp,
+  ViewStyle,
 } from 'react-native'
 
 import ImageItem from "./components/ImageItem/ImageItem";
@@ -42,7 +44,8 @@ type Props = {
   delayLongPress?: number;
   HeaderComponent?: ComponentType<{ imageIndex: number }>;
   FooterComponent?: ComponentType<{ imageIndex: number }>;
-  dismissPopUpPressOutSideImage?: boolean
+  dismissPopUpPressOutSideImage?: boolean;
+  headerStyles?: StyleProp<ViewStyle>;
 };
 
 const DEFAULT_ANIMATION_TYPE = "fade";
@@ -68,6 +71,7 @@ function ImageViewing({
   HeaderComponent,
   FooterComponent,
   dismissPopUpPressOutSideImage,
+  headerStyles,
 }: Props) {
   const imageList = useRef<VirtualizedList<ImageSource>>(null);
   const [opacity, onRequestCloseEnhanced] = useRequestClose(onRequestClose);
@@ -107,7 +111,7 @@ function ImageViewing({
       <StatusBar backgroundColor={backgroundColor} />
       <TouchableWithoutFeedback onPress={dismissPopUpPressOutSideImage ? onRequestCloseEnhanced : undefined}>
         <View style={[styles.container, { opacity, backgroundColor }]}>
-          <Animated.View style={[styles.header, { transform: headerTransform }]}>
+          <Animated.View style={[styles.header, headerStyles, { transform: headerTransform }]}>
             {typeof HeaderComponent !== "undefined" ? (
               React.createElement(HeaderComponent, {
                 imageIndex: currentImageIndex,
