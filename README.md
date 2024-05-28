@@ -23,19 +23,19 @@ Try with Expo: https://expo.io/@antonkalinin/react-native-image-viewing
 ## Installation
 
 ```bash
-yarn add rn-torus-image-viewing
+yarn add @quannh.2871/react-native-image-viewing
 ```
 
 or
 
 ```bash
-npm install --save rn-torus-image-viewing
+npm install --save @quannh.2871/react-native-image-viewing
 ```
 
 ## Usage
 
 ```jsx
-import ImageView from "react-native-image-viewing";
+import ImageView from "@quannh.2871/react-native-image-viewing";
 
 const images = [
   {
